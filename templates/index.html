@@ -10,13 +10,13 @@
 </head>
 <body>
 	<div class="container">
-		<h1>Welcome to Flask</h1>
+		<h1>Welcome to Flask!</h1>
 		<br>
-		<p>Click <a href="{{ url_for('home') }}">here</a>to go home</p>
+		<p>Click <a href="{{ url_for('logout') }}">here</a> to logout.</p>
 		{% for message in get_flashed_messages() %}
-		    {{ message }}
+		{{ message }}
 		{% endfor %}
-	</div>
+    </div>
 	    <!-- Bootstrap core JavaScript -->
     <script src="{{ url_for('static', filename='bootstrap.min.js') }}"></script>
     <!--<script src="{{ url_for('static', filename='bootstrap.bundle.min.js') }}"></script>-->
