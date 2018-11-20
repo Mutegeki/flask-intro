@@ -1,25 +1,6 @@
-<!DOCTYPE html>
-<html>
-<head>
-	<meta charset="utf-8">
-	<title>Flask Intro</title>
-	<meta name="viewport" content="width=device-width, initial-scale=1.2">
-	    <!-- Bootstrap core CSS -->
-    <link href="{{ url_for('static', filename='bootstrap.min.css') }}" rel="stylesheet">
-	
-</head>
-<body>
-	<div class="container">
-		<h1>Welcome to Flask</h1>
-		<br>
-		<p>Click <a href="{{ url_for('home') }}">here</a>to go home</p>
-		{% for message in get_flashed_messages() %}
-		    {{ message }}
-		{% endfor %}
-	</div>
-	    <!-- Bootstrap core JavaScript -->
-    <script src="{{ url_for('static', filename='bootstrap.min.js') }}"></script>
-    <!--<script src="{{ url_for('static', filename='bootstrap.bundle.min.js') }}"></script>-->
-
-</body>
-</html>
+{% extends "base.html" %}
+{% block content %}
+<h1>Welcome to Flask!</h1>
+<br>
+<p>Click <a href="{{ url_for('home') }}">here</a>to go home</p>
+{% endblock %}
