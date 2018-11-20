@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Flask Intro</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1.2">
+	    <!-- Bootstrap core CSS -->
+    <link href="{{ url_for('static', filename='bootstrap.min.css') }}" rel="stylesheet">
+	
+</head>
+<body>
+    <div class="container">
+
+      <!-- child template -->
+      {% block content %}{% endblock %}
+
+      <!-- errors -->
+      {% if error %}
+        <p class="error"><strong>Error:</strong> {{ error }}</p>
+      {% endif %}
+
+      <!-- messages -->
+      {% for message in get_flashed_messages() %}
+        {{ message }}
+      {% endfor %}
+    </div>
+	    <!-- Bootstrap core JavaScript -->
+    <script src="{{ url_for('static', filename='bootstrap.min.js') }}"></script>
+    <!--<script src="{{ url_for('static', filename='bootstrap.bundle.min.js') }}"></script>-->
+
+</body>
+</html>
